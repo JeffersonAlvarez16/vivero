@@ -7,6 +7,7 @@ import { useCartStore } from '@/store/cart';
 import { formatPrice } from '@/utils/format';
 import { toast } from 'sonner';
 import Icon from './Icon';
+import Image from 'next/image';
 
 export default function Cart() {
   const [isOpen, setIsOpen] = useState(false);
@@ -103,11 +104,12 @@ export default function Cart() {
                             <ul role="list" className="-my-6 divide-y divide-gray-200">
                               {items.map((item) => (
                                 <li key={item.id} className="flex py-6">
-                                  <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                    <img
+                                  <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200 relative">
+                                    <Image
                                       src={item.imagen}
                                       alt={item.nombre}
-                                      className="h-full w-full object-cover object-center"
+                                      fill
+                                      className="object-cover object-center"
                                       onError={(e) => {
                                         const img = e.target as HTMLImageElement;
                                         img.src = '/plantas/default-plant.jpg';

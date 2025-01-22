@@ -1,14 +1,13 @@
 'use client';
 
-import { useState } from 'react';
 import { usePlantTrackingStore } from '@/store/plant-tracking';
 import Navigation from '@/components/Navigation';
 import { CalendarDaysIcon, ChartBarIcon, PlusIcon } from '@heroicons/react/24/outline';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function MyPlantsPage() {
   const { plants, addNote, updateWateringDate, updateFertilizingDate } = usePlantTrackingStore();
-  const [selectedPlant, setSelectedPlant] = useState<number | null>(null);
 
   const handleWatering = (plantId: number) => {
     updateWateringDate(plantId);
@@ -60,7 +59,7 @@ export default function MyPlantsPage() {
                   className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow p-6"
                 >
                   <div className="relative h-48 mb-4">
-                    <img
+                    <Image
                       src={plant.image}
                       alt={plant.name}
                       className="w-full h-full object-cover rounded-md"

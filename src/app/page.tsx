@@ -4,6 +4,7 @@ import Link from 'next/link';
 import ProductCard from '@/components/ProductCard';
 import { products } from '@/data/products';
 import Navigation from '@/components/Navigation';
+import Image from 'next/image';
 
 export default function HomePage() {
   const featuredProducts = products.slice(0, 4);
@@ -52,10 +53,11 @@ export default function HomePage() {
               {/* Interior Plants */}
               <Link href="/productos?categoria=interior" className="group">
                 <div className="relative h-64 overflow-hidden rounded-lg">
-                  <img
+                  <Image
                     src="/images/categories/interior.jpg"
                     alt="Plantas de Interior"
-                    className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
                     <div className="absolute bottom-0 p-6">
@@ -69,10 +71,11 @@ export default function HomePage() {
               {/* Succulents */}
               <Link href="/productos?categoria=suculentas" className="group">
                 <div className="relative h-64 overflow-hidden rounded-lg">
-                  <img
+                  <Image
                     src="/images/categories/suculentas.jpg"
                     alt="Suculentas"
-                    className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
                     <div className="absolute bottom-0 p-6">
@@ -86,10 +89,11 @@ export default function HomePage() {
               {/* Outdoor Plants */}
               <Link href="/productos?categoria=exterior" className="group">
                 <div className="relative h-64 overflow-hidden rounded-lg">
-                  <img
+                  <Image
                     src="/images/categories/exterior.jpg"
                     alt="Plantas de Exterior"
-                    className="h-full w-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
+                    fill
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent">
                     <div className="absolute bottom-0 p-6">

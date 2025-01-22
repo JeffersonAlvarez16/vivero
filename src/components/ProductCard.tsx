@@ -10,7 +10,6 @@ import { toast } from 'sonner';
 import { Heart, ShoppingCart, Plus } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import Icon from './Icon';
 
 interface ProductCardProps {
   product: Product;
